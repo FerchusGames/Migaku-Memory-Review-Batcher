@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Migaku Memory – Review Batcher
 // @namespace    https://ferchus.com
-// @version      1.0.3
+// @version      1.0.4
 // @description  Auto-closes when your batch is cleared. Persistent hide toggles (counter / labels / progress), instant batch size apply, SPA-safe. Skips auto-close if "New" badge present.
 // @author       Ferchus
 // @match        *://study.migaku.com/*
@@ -47,7 +47,7 @@
     #reviewsDropBox {
       position: fixed;
       right: ${BOX_RIGHT_OFFSET}px;
-      bottom: 16px;
+      bottom: 30px;
       z-index: 2147483647;
       min-width: 130px;
       padding: 12px 14px;
