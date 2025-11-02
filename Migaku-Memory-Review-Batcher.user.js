@@ -202,7 +202,16 @@
     if (goalOk) autoClickClose();
   }
 
+  function hasNewBadge() {
+  const el = document.querySelector('span.UiTypo.UiTypo__smallCaption.-emphasis');
+  // Only block if the badge actually says "New"
+  return !!(el && el.textContent && el.textContent.trim().toLowerCase() === 'new');
+  }
+
   function autoClickClose() {
+    // If there's a "New" badge on the page, do nothing.
+    if (hasNewBadge()) return;
+
     if (goalClicked) return;
     goalClicked = true;
     const btn = document.querySelector(SELECTOR_CLOSE);
