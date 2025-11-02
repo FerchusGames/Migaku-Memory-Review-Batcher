@@ -4,7 +4,7 @@
 // @version      1.0.7
 // @description  Auto-closes when your batch is cleared. Persistent hide toggles (counter / labels / progress), instant batch size apply, SPA-safe. Skips auto-close if "New" badge present.
 // @author       Ferchus
-// @match        *://study.migaku.com/*
+// @match        https://study.migaku.com/*
 // @icon         https://study.migaku.com/favicon.ico
 // @run-at       document-idle
 // @noframes
