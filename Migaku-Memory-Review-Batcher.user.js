@@ -73,7 +73,7 @@
     /* Compact number input (3 digits) */
     #reviewsDropBox label { font-size: 12px; opacity: .9; display: flex; gap: 6px; align-items: center; }
     #reviewsDropBox input[type="number"] {
-      width: 44px; /* ~3 digits */
+      width: 48px; /* ~3 digits */
       padding: 3px 6px;
       border-radius: 6px;
       border: 1px solid rgba(255,255,255,0.4);
