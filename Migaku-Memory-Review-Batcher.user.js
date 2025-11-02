@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Migaku Memory – Review Batcher
+// @name         Migaku Review Batcher
 // @namespace    https://ferchus.com
-// @version      1.0.6
+// @version      1.0.7
 // @description  Auto-closes when your batch is cleared. Persistent hide toggles (counter / labels / progress), instant batch size apply, SPA-safe. Skips auto-close if "New" badge present.
 // @author       Ferchus
 // @match        *://study.migaku.com/*
@@ -51,23 +51,26 @@
       z-index: 2147483647;
       min-width: 130px;
       padding: 12px 14px;
-      font: 13px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1.4;
+      font-family: InterVariable, "Noto Sans JP", sans-serif;
       color: #ffffff;
       background: #202047;
       border-radius: 12px;
-      box-shadow: 0 4px 18px rgba(0,0,0,.25);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: none;
+      box-shadow: none;
       user-select: none;
       pointer-events: auto;
     }
+
     #reviewsDropBox.green { box-shadow: 0 0 12px #ff8b29; }
-    #reviewsDropBox .title { font-weight: 600; margin-bottom: 8px; font-size: 14px; }
+    #reviewsDropBox .title { font-weight: 700; margin-bottom: 8px; font-size: 16px; }
     #reviewsDropBox .controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
 
     /* Batch input width tweak */
     #reviewsDropBox label { font-size: 12px; opacity: .9; display: flex; gap: 6px; align-items: center; }
     #reviewsDropBox input[type="number"] {
-      width: 48px;
+      width: 52px;
       padding: 3px 6px;
       border-radius: 6px;
       border: 1px solid rgba(255,255,255,0.4);
@@ -132,7 +135,7 @@
     const box = document.createElement('div');
     box.id = 'reviewsDropBox';
     box.innerHTML = `
-      <div class="title">Review Batcher</div>
+      <h3 class="UiTypo UiTypo__heading3 Statistic__title" data-v-3243e499>Batching</h3>
 
       <div class="controls" style="margin-bottom:6px;">
         <label title="Amount of cards to study in a session">
