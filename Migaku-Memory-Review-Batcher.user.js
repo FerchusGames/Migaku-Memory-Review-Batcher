@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Migaku Memory – Review Batcher
 // @namespace    https://ferchus.com
-// @version      1.0.5
+// @version      1.0.6
 // @description  Auto-closes when your batch is cleared. Persistent hide toggles (counter / labels / progress), instant batch size apply, SPA-safe. Skips auto-close if "New" badge present.
 // @author       Ferchus
 // @match        *://study.migaku.com/*
@@ -112,11 +112,11 @@
     if (hideCounter)
       css += `${SELECTOR_COUNTER}{visibility:hidden !important;}\n`;
 
-    // Hide only .-accent-4.-rounded.-solid.UiStatusLabel elements
+    // Hide labels only if they are children of .DeckItem__labels
     if (hideLabels) {
       css += `
-        .-accent-4.-rounded.-solid.UiStatusLabel {
-          display:none !important;
+        .DeckItem__labels .UiStatusLabel.-accent-4.-rounded.-solid, .Status__container .UiStatusLabel.-accent-4.-rounded.-solid {
+          display: none !important;
         }
       `;
     }
